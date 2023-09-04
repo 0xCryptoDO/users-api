@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  users-api-production:
+    restart: always
+    build: .
+    ports:
+    - 3303:3003
+    environment:
+      NODE_ENV: production
+      DB_USERNAME: __DB_USERNAME__
+      DB_PASSWORD: __DB_PASSWORD__
+      DB_HOST: __DB_HOST__
+      JWT_SECRET: __JWT_SECRET__
+      DB_PORT: __DB_PORT__
